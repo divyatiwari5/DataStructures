@@ -42,13 +42,17 @@ class Stack:
         if self.top < 0:
             print("Stack UnderFlow")
             # TODO: raise an error
-            return False
+            return None
         else:
             # print(self.elements[self.top])
-            print("Element popped: "+ self.elements[self.top])
+            poped = self.elements[self.top]
+            print("Element popped: "+ poped)
             self.elements[self.top] = None
             self.top -= 1
-            return True
+            return poped
+
+    def isempty(self):
+        return self.top == -1
 
     def topfunc(self):
         print(self.top)
@@ -60,7 +64,7 @@ def main():
     # What if user enters size to be non positive
     # Add comments
     # paranthesis_check.py - Create a function where
-    # You accept a parameter string
+    # You accept a parameter string -> DONE
     # Using stack you check if paranthesis system is okay
     # If there is an error, return False
     # Else return true

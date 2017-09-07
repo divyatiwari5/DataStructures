@@ -2,6 +2,10 @@ from .stack import Stack
 
 
 def main():
+
+    open_bracket = ('(', '{', '[')
+    close_bracket = (')', '}', ']')
+
     # What if user presses 2/3/4 without pressing 1
     # What if user enters string instead of integer
     # What if user enters size to be non positive
@@ -23,17 +27,27 @@ def main():
             stobj = Stack(siz)
             print("Your new stack is created!")
 
+            # exp -> {[()]$
+            # Stack -> {
+            # i -> $ position of i in close_bracket = 2
+            # e -> [ position of e in open_bracket = 2
+            exp = exp + "$"
+
             for i in exp:
-                if "(" in i or "{" in i or "[" in i:
-                    e = i
-                    stobj.push(e)
-                elif ")" in i  or "}" in i or "]" in i:
-                    e = i
-                    stobj.pop(e)
+                if i in open_bracket:
+                    stobj.push(i)
+                elif i in close_bracket:
+                    e = stobj.pop()
+                    if e is not None:
+                        if not close_bracket.index(i) == open_bracket.index(e):
+                            print("Invalid expression: Bracket series mismatch!")
+                            break
 
-            print(stobj.top)
-
-
+                elif i == '$':
+                    if stobj.isempty():
+                        print("Success")
+                    else:
+                        print("Invalid Expression: Bracket number mismatch!")
 
         else:
             exit()
