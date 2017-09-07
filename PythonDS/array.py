@@ -82,8 +82,7 @@ def delete_by_value(ary, value):
 
 def main():
     array = list()
-    choice = 99
-    while choice != 0:
+    while True:
         message = """
 1. Insert an element
 2. Insert an element at specific position
@@ -92,7 +91,7 @@ def main():
 5. Update by Value
 6. Delete by Position
 7. Delete by Value
-8. Show Array
+8. Show Array.Array
 0. Exit
 Enter your choice: """
         choice = int(input(message))
