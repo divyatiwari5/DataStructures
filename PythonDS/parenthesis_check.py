@@ -28,9 +28,9 @@ def main():
             print("Your new stack is created!")
 
             # exp -> {[()]$
-            # Stack -> {
-            # i -> $ position of i in close_bracket = 2
-            # e -> [ position of e in open_bracket = 2
+            # Stack -> {[
+            # i -> $ position of i in close_bracket = 2  )
+            # e -> [ position of e in open_bracket = 2 (
             exp = exp + "$"
 
             for i in exp:

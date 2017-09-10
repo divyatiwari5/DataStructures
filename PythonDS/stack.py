@@ -79,7 +79,7 @@ def main():
 
         if choice == 1:
             siz = int(input("Enter the size of stack: "))
-            stobj = stack(siz)
+            stobj = Stack(siz)
             print("Your new stack is created!")
         elif choice == 2:
             e = input("Enter the element that is to be pushed: ")
